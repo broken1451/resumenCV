@@ -1,0 +1,115 @@
+<section class="about section" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="section-title padd-15">
+          <h2>About Me</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="about-content padd-15">
+          <div class="row">
+            <div class="about-text padd-15">
+              <h3>I'm Adrian Bravo <span>Web Developer</span></h3>
+              <p>Hi! My name is Adrian . I am a Web Developer, 
+                {{aboutService.getAbout()}} </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="personal-info padd-15">
+              <div class="row">
+                <div class="info-item padd-15">
+                    <p>Email : <span id="myInput">{{aboutService.getUser().email}}</span> 
+                        <i class="fa fa-clipboard" aria-hidden="true" style="margin-left: 2%; cursor: pointer;" (click)="myFunction()"></i>
+                     </p>
+                </div>
+                <div class="info-item padd-15">
+                  <p>Degree : <span>{{aboutService.getUser().degree}}</span></p>
+                </div>
+                <div class="info-item padd-15">
+                  <p>Phone : <span>{{aboutService.getUser().phone}}</span></p>
+                </div>
+                <div class="info-item padd-15">
+                  <p>Country : <span>{{aboutService.getUser().country}}</span></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="buttons padd-15">
+                  <a type="button" href="https://drive.google.com/file/d/1KBeiTBGlyKBOES4HWe2dYA0IRjGUn8JI/view" target="_blank" class="btn">View Resume</a>
+
+                  <a class="btn" href="https://github.com/broken1451" target="_blank">
+                    <i class="fa fa-github"></i>
+                  </a> 
+
+                <a class="btn" href="https://t.ly/MAemF" target="_blank"><i class="fa fa-linkedin"></i></a>
+
+                </div>
+              </div>
+            </div>
+            <div class="skills padd-15">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="skill-item padd-15">
+                            <h3 class="title" style="margin-bottom: 7px;">Skills</h3>
+                            <ul>
+                                @for (item of aboutService.getSkills(); track item.id) {
+                                    <li style="color: white; margin-left: 10%;">{{item.value}}</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6" style="margin-left: 10%;">
+                        <div class="skill-item padd-15">
+                            <h3 class="title" style="margin-bottom: 7px; color: black;">Skills</h3>
+                            <ul>
+                                @for (item of aboutService.getSkills2(); track item.id) {
+                                    <li style="color: white; margin-left: 10%;">{{item.value}}</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="education padd-15">
+              <h3 class="title">Education</h3>
+              <div class="row">
+                <div class="timeline-box padd-15">
+                  <div class="timeline shadow-dark">
+                    @for (item of aboutService.getEducation(); track item.name) {
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> {{item.date}}</h6>
+                          <h4 class="timeline-title">{{item.title}}</h4>
+                          <p class="timeline-text">{{item.name}}</p>
+                        </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="experience padd-15">
+              <h3 class="title">Experience</h3>
+              <div class="row">
+                <div class="timeline-box padd-15">
+                  <div class="timeline shadow-dark">
+                    
+                    @for (item of aboutService.getExperience(); track item.company) {
+                        <div class="timeline-item">
+                          <div class="circle-dot"></div>
+                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> {{item.date}} - {{item.company}}</h6>
+                          <h4 class="timeline-title">{{item.title}}</h4>
+                          <p class="timeline-text">{{item.description}}</p>
+                        </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
