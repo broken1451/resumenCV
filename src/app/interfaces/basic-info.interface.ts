@@ -4,6 +4,8 @@ export interface BasicInfo {
     email: string;
     phone: string;
     degree: string;
+    job: string;
+    name: string;
 }
 
 export interface Education {
@@ -17,5 +19,5 @@ export interface Experience {
     title?: string;
     date?: string;
     company?: string;
-    description?: string;
+    description?: string | any[];
 }

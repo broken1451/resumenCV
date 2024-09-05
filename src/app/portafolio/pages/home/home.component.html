@@ -1,115 +1,215 @@
-<section class="about section" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="section-title padd-15">
-          <h2>About Me</h2>
+<div class="main-content-wrapper">
+  <div class="container-fluid">
+    <div class="top-bar text-center position-relative">
+      <div class="top-bar-inner">
+
+        <!-- <a class="btn btn-primary top-bar-cta"
+          href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/risen-free-bootstrap-5-dark-mode-resume-cv-template-for-developers/">Hire
+          Me</a> -->
+
+        <ul class="social-list list-inline mx-auto">
+      
+          <li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://github.com/broken1451" target="_blank"><i
+                class="fa-brands fa-github fa-fw"></i></a></li>
+
+          <li class="list-inline-item me-0 me-md-1 me-lg-2"><a href="https://www.linkedin.com/in/adrian-bravo-344249118/" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-fw"></i></a></li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="resume-wrapper mx-auto rounded-2">
+      <div class="resume-header px-4 px-lg-5">
+        <div class="resume-profile-holder text-center">
+          <img class="resume-profile-pic rounded-circle" src="assets/images/yo2.png" style="height: 9%;"  alt="">
+
+          <h2 class="resume-name text-uppercase">{{aboutService.getUser().name}} </h2>
+          <div class="resume-role-title text-uppercase">{{aboutService.getUser().job}}</div>
+          <div class="resume-contact mt-4">
+            <ul class="resume-contact-list list-unstyled list-inline mb-0 justify-content-between">
+              <li class="list-inline-item me-md-3 me-lg-5"><i
+                  class="resume-contact-icon bi bi-telephone-inbound me-2"></i> {{aboutService.getUser().phone}}
+              </li>
+              <li class="list-inline-item me-md-3 me-lg-5"><i
+                  class="resume-contact-icon bi bi-envelope me-2"></i> {{aboutService.getUser().email}}
+              </li>
+              <li hidden class="list-inline-item me-lg-5"><i
+                  class="resume-contact-icon bi bi-globe me-2"></i> www.yourwebsite.com</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="about-content padd-15">
-          <div class="row">
-            <div class="about-text padd-15">
-              <h3>I'm Adrian Bravo <span>Web Developer</span></h3>
-              <p>Hi! My name is Adrian . I am a Web Developer, 
-                {{aboutService.getAbout()}} </p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="personal-info padd-15">
-              <div class="row">
-                <div class="info-item padd-15">
-                    <p>Email : <span id="myInput">{{aboutService.getUser().email}}</span> 
-                        <i class="fa fa-clipboard" aria-hidden="true" style="margin-left: 2%; cursor: pointer;" (click)="myFunction()"></i>
-                     </p>
-                </div>
-                <div class="info-item padd-15">
-                  <p>Degree : <span>{{aboutService.getUser().degree}}</span></p>
-                </div>
-                <div class="info-item padd-15">
-                  <p>Phone : <span>{{aboutService.getUser().phone}}</span></p>
-                </div>
-                <div class="info-item padd-15">
-                  <p>Country : <span>{{aboutService.getUser().country}}</span></p>
-                </div>
+
+      <div class="resume-body p-4 p-lg-5">
+        <div class="row">
+          <div class="col-main col-12 col-lg-8 pe-lg-4">
+            <section class="resume-summary-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-2 py-lg-3"><i
+                  class="resume-section-heading-icon bi bi-person me-2"></i>About Me</h3>
+              <div class="resume-summary-desc">
+                {{aboutService.getAbout()}}
               </div>
+            </section><!--//resume-section-->
 
-              <div class="row">
-                <div class="buttons padd-15">
-                  <a type="button" href="https://drive.google.com/file/d/1KBeiTBGlyKBOES4HWe2dYA0IRjGUn8JI/view" target="_blank" class="btn">View Resume</a>
+            <hr>
 
-                  <a class="btn" href="https://github.com/broken1451" target="_blank">
-                    <i class="fa fa-github"></i>
-                  </a> 
+            <section class="resume-experience-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
+                  class="resume-section-heading-icon bi bi-briefcase me-2"></i>Work Experience
+              </h3>
+              <div class="resume-timeline position-relative">
+                @for (item of aboutService.getExperience(); track item.date) {
 
-                <a class="btn" href="https://t.ly/MAemF" target="_blank"><i class="fa fa-linkedin"></i></a>
-
-                </div>
-              </div>
-            </div>
-            <div class="skills padd-15">
-                <div class="row">
-                    <div class="col-6">
-                        <div class="skill-item padd-15">
-                            <h3 class="title" style="margin-bottom: 7px;">Skills</h3>
-                            <ul>
-                                @for (item of aboutService.getSkills(); track item.id) {
-                                    <li style="color: white; margin-left: 10%;">{{item.value}}</li>
-                                }
-                            </ul>
-                        </div>
+                  <article class="resume-timeline-item position-relative pb-5">
+  
+                    <div class="resume-timeline-item-header mb-2">
+  
+                      <div class="resume-position-meta d-flex justify-content-between mb-1">
+                        <div class="resume-position-time">{{item.date}}</div>
+                        <div class="resume-company-name">{{item.company}}</div>
+                      </div>
+                      <h3 class="resume-position-title mb-1">{{item.title}}</h3>
+  
                     </div>
-                    <div class="col-6" style="margin-left: 10%;">
-                        <div class="skill-item padd-15">
-                            <h3 class="title" style="margin-bottom: 7px; color: black;">Skills</h3>
-                            <ul>
-                                @for (item of aboutService.getSkills2(); track item.id) {
-                                    <li style="color: white; margin-left: 10%;">{{item.value}}</li>
-                                }
-                            </ul>
-                        </div>
+                    <div class="resume-timeline-item-desc">
+  
+  
+                      <ul class="resume-timeline-list">
+                        @for (item of item.description; track item) {
+                          <li> {{item.desc}}</li>
+                        }
+              
+                      </ul>
+  
                     </div>
-                </div>
-            </div>
+  
+                  </article>
+                }
+              </div><!--//resume-timeline-->
+            </section>
           </div>
+          
+          <div class="col-12 col-lg-4 ps-lg-4">
 
-          <div class="row">
-            <div class="education padd-15">
-              <h3 class="title">Education</h3>
-              <div class="row">
-                <div class="timeline-box padd-15">
-                  <div class="timeline shadow-dark">
-                    @for (item of aboutService.getEducation(); track item.name) {
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> {{item.date}}</h6>
-                          <h4 class="timeline-title">{{item.title}}</h4>
-                          <p class="timeline-text">{{item.name}}</p>
-                        </div>
-                    }
-                  </div>
+            <section class="resume-skills-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
+                  class="resume-section-heading-icon bi bi-gear me-2"></i>Tech Stack</h3>
+
+              <ul class="">
+                @for (item of aboutService.getSkills(); track item.id) {
+                  <li class="mb-2">
+                    <div class="resume-skill-name">{{item.value}}</div>
+                  </li>
+                }
+              </ul>
+
+            </section>
+
+            <hr>
+
+            <!-- <section class="resume-skills-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
+                  class="resume-section-heading-icon bi bi-person-gear me-2"></i>Soft Skills
+              </h3>
+              <ul class="list-inline">
+                <li class="list-inline-item"><span
+                    class="badge resume-skill-badge">Leadership</span></li>
+                <li class="list-inline-item"><span class="badge resume-skill-badge">Project
+                    Management</span></li>
+
+                <li class="list-inline-item"><span
+                    class="badge resume-skill-badge">DevOps</span></li>
+                <li class="list-inline-item"><span class="badge resume-skill-badge">Public
+                    Speaking</span></li>
+              </ul>
+            </section>
+
+            <hr> -->
+
+            <!-- <section class="resume-projects-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
+                  class="resume-section-heading-icon bi bi-code-slash me-2"></i>Projects</h3>
+              <div class="item">
+                <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a
+                    href="#">Project lorem Ipsum</a></h4>
+                <div class="item-desc">
+                  Project desc goes here aenean ut libero sit amet ante fermentum scelerisque
+                  non a leo.
                 </div>
               </div>
-            </div>
-            <div class="experience padd-15">
-              <h3 class="title">Experience</h3>
-              <div class="row">
-                <div class="timeline-box padd-15">
-                  <div class="timeline shadow-dark">
-                    
-                    @for (item of aboutService.getExperience(); track item.company) {
-                        <div class="timeline-item">
-                          <div class="circle-dot"></div>
-                          <h6 class="timeline-date"><i class="fa fa-calendar"></i> {{item.date}} - {{item.company}}</h6>
-                          <h4 class="timeline-title">{{item.title}}</h4>
-                          <p class="timeline-text">{{item.description}}</p>
-                        </div>
-                    }
-                  </div>
+              <div class="item">
+                <h4 class="item-heading"><i class="item-icon bi bi-square-fill me-2"></i><a
+                    href="#">Volutpat App</a></h4>
+                <div class="item-desc">
+                  You can link to your project Github page.
                 </div>
               </div>
-            </div>
+
+
+            </section>
+
+            <hr> -->
+
+            <section class="resume-educate-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
+                  class="resume-section-heading-icon bi bi-book me-2"></i>Education</h3>
+              <ul class="">
+                @for (item of aboutService.getEducation(); track item.name) {
+                  <li class="mb-2">
+                    <div class="resume-degree font-weight-bold">{{item.institution}}</div>
+                    <div class="resume-degree-org">{{item.name}}</div>
+                    <div class="resume-degree-time">{{item.date}}</div>
+                  </li>           
+                }
+              </ul>
+            </section>
+
+            <hr>
+
+            <section class="resume-lang-section resume-section">
+              <h3 class="resume-section-heading text-uppercase py-2 py-lg-3 py-3"><i
+                  class="resume-section-heading-icon bi bi-translate me-2"></i>Languages</h3>
+              <ul class="list-unstyled resume-lang-list">
+                <li class="mb-2">
+                  <div class="resume-lang-name">English</div>
+                  <div class="resume-level-indicator row gx-0 flex-nowrap">
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item"></span></div>
+                    <div class="col"><span class="item item"></span></div>
+                    <div class="col"><span class="item item"></span></div>
+                    <div class="col"><span class="item item"></span></div>
+                    <div class="col"><span class="item item"></span></div>
+                  </div>
+                </li>
+                <li class="mb-2">
+                  <div class="resume-lang-name">Spanish</div>
+                  <div class="resume-level-indicator row gx-0 flex-nowrap">
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                    <div class="col"><span class="item item-full"></span></div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+
+
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>

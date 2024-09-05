@@ -32,17 +32,11 @@ export class AboutService {
             { id: 21, value: 'NestJS' },
             { id: 22, value: 'Golang' },
             { id: 23, value: 'Docker' },
-        ]
-    );
-
-    private skills2 = signal<{ id: number, value: string }[]>(
-        [
             { id: 16, value: 'Ubuntu GNU/Linux' },
             { id: 17, value: 'Debian GNU/Linux' },
             { id: 18, value: 'JSON' },
             { id: 19, value: 'Scrum' },
             { id: 20, value: 'AWS' },
-
             { id: 11, value: 'GitHub & GitLab' },
             { id: 12, value: 'Xcode' },
             { id: 13, value: 'Shell Scripting Basic' },
@@ -57,33 +51,35 @@ export class AboutService {
         email: 'adrianbravo145@gmail.com',
         phone: '+56936742459',
         degree: 'Computer Engineer',
+        job: 'Full Stack Developer',
+        name: 'Adrian Bravo'
     });
 
     private _education = signal<Education[]>([
         {
             title: 'Computer Engineer',
             institution: 'IUT (Venezuela)',
-            name: 'Completed a Computer Engineering program at Instituto Universitario Doctor Dederico rivero palacios from 2015 to 2016.',
+            name: 'Completed a Computer Engineering program at Instituto Universitario Doctor Dederico rivero palacios.',
             date: '2015 - 2016',
 
         },
         {
             title: 'Informatics Certificate of Higher Education',
             institution: 'IUT (Venezuela)',
-            name: 'Obtained an Informatics Certificate of Higher Education from Instituto Universitario Doctor Dederico rivero palacios from 2008 to 2014.',
+            name: 'Obtained an Informatics Certificate of Higher Education from Instituto Universitario Doctor Dederico rivero palacios.',
             date: '2008 - 2014',
         },
         {
             title: 'UDEMY',
             institution: 'UDEMY',
             date: '2018',
-            name: 'Completed a course on UDEMY in 2018.'
+            name: 'Completed a course on UDEMY.'
         },
         {
             title: 'Angular & Angular 8: Basic to Advanced Course',
             institution: 'UDEMY',
             date: '2019',
-            name: 'Completed a course on Angular & Angular 8: Basic to Advanced Course on UDEMY in 2019.'
+            name: 'Completed a course on Angular & Angular 8: Basic to Advanced Course on UDEMY.'
         }
     ]);
 
@@ -92,36 +88,65 @@ export class AboutService {
             title: 'Full Stack Developer',
             company: 'Acid Labs',
             date: '2020 - Current ',
-            description: `Web Application Development under the JavaScript, HTML5,
-                        CSS3 programming language and JavaScript-based frameworks
-                        such as Angular, using technologies such as NodeJs (Express) on
-                        the backend branch.
-                        Microservices and cronjobs development in golang (Go).`
+            description: [
+                {
+                    id: 1,
+                    desc: `Web Application Development under the JavaScript, HTML5,CSS3 programming language and JavaScript-based frameworks.`
+                },
+                {
+                    id: 2,
+                    desc: `Using Angular as frontend framework, using technologies such as NodeJs (Express) on the backend.`
+                },
+                {
+                    id: 3,
+                    desc: `Microservices and cronjobs development in golang (Go).`
+                },
+                {
+                    id: 8,
+                    desc: `Development API RESTFULL on Netsjs and golang.`
+                }
+            ]
         },
         {
             title: 'FrontEnd Web / Mobile Developer',
             company: 'Inovabiz SPA',
             date: '2020 - 2020',
-            description: `Development of mobile applications under the programming
+          
+            description: [
+                {
+                    id: 4,
+                    desc: `Development of mobile applications under the programming
                         language JavaScript, HTML5, CSS3 and frameworks based on
-                        JavaScript such as Angular with the integration of Ionic, on the
+                        JavaScript such as Angular with the integration of Ionic.`
+                },
+                {
+                    id: 5,
+                    desc: `On the
                         backend branch using technologies such as NodeJs (Express)
                         and NestJs`
+                },
+            ]
         },
         {
             title: 'FrontEnd Web Developer',
             company: 'Emergya Consultants',
             date: '2019 - 2020',
-            description: `Development of Web Applications under the programming
-                        language JavaScript, HTML5, CSS3 and JavaScript-based frameworks such as Angular + 4, also working on the cloud side such
-                        as Amazon Web Services.`
+            description: [
+                {
+                    id: 6,
+                    desc:  `Development of Web Applications under the programming language JavaScript, HTML5, CSS3 and JavaScript-based frameworks such as Angular + 4.`
+                },
+                {
+                    id: 7,
+                    desc:  `Working on the cloud side such as Amazon Web Services..`
+                },
+            ]
         }
     ])
 
 
     public getAbout = computed(() => this._about());
     public getSkills = computed(() => this.skills());
-    public getSkills2 = computed(() => this.skills2());
     public getUser = computed(() => this._user());
     public getEducation = computed(() => this._education());
     public getExperience = computed(() => this._experience());
