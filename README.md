@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## CV
 https://cvadrian.netlify.app/#/portafolio/home
+https://roadmap.sh/projects/single-page-cv
