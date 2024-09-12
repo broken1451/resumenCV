@@ -37,7 +37,7 @@ export class AboutService {
         {
             title: 'Técnico Superior Universitario en la mención Diseño Gráfico.',
             institution: 'IUTIRLA',
-            name: 'Instituto Universitario de Tecnología Industrial "Rodolfo Loero Arismendi.',
+            name: 'Técnico Superior Universitario en la mención Diseño Gráfico.',
             date: '2011 - 2015',
 
         },
@@ -84,7 +84,7 @@ export class AboutService {
             description: [
                 {
                     id: 4,
-                    desc: `Diseño y actualización de catálogos de productos para ventas online. Así como también el diseño de distintos materiales para publicidad web de las marcas en venta, manejo de redes sociales, plataformas de ventas y optimi- zación de fotografías para ventas online en Venezuela, Chile, entre otros países latinoamericanos.`
+                    desc: `Diseño y actualización de catálogos de productos para ventas online. Así como también el diseño de distintos materiales para publicidad web de las marcas en venta, manejo de redes sociales, plataformas de ventas y optimización de fotografías para ventas online en Venezuela, Chile, entre otros países latinoamericanos.`
                 },
                
             ]
